@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+.glitch:hover {
+  animation: glitch 0.5s linear; /* Reduced duration and removed infinite */
+}
+
+.neon-glow {
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00f, 0 0 30px #ff00ff;
+}
