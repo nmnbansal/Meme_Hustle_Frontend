@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import NeonText from './NeonText';
+import NeonText, { Loader } from './NeonText';
 
 function LeaderboardTable() {
   const [memes, setMemes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
+      setLoading(true);
       try {
         const response = await fetch('https://meme-hustle-backend-zmov.onrender.com/api/memes/leaderboard?top=10');
         const data = await response.json();
@@ -13,9 +15,12 @@ function LeaderboardTable() {
       } catch (error) {
         console.error('Leaderboard error:', error);
       }
+      setLoading(false);
     };
     fetchLeaderboard();
   }, []);
+
+  if (loading) return <Loader className="my-12" />;
 
   return (
     <div className="max-w-4xl mx-auto">

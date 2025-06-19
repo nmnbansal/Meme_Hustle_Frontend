@@ -8,4 +8,12 @@ function NeonText({ text, className }) {
   );
 }
 
+export function Loader({ className = '' }) {
+  return (
+    <div className={`flex justify-center items-center ${className}`}>
+      <div className="loader-neon"></div>
+    </div>
+  );
+}
+
 export default NeonText;

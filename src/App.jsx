@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import io from 'socket.io-client';
 import Gallery from './screens/Gallery';
 import CreateMeme from './screens/CreateMeme';
@@ -42,7 +42,9 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 text-white p-4">
-        <NeonText text="MemeHustle" className="text-4xl font-bold text-center mb-8" />
+        <Link to="/">
+          <NeonText text="MemeHustle" className="text-4xl font-bold text-center mb-8 cursor-pointer" />
+        </Link>
         <Routes>
           <Route path="/" element={<Gallery socket={socket} memes={memes} setMemes={setMemes} />} />
           <Route path="/create" element={<CreateMeme socket={socket} />} />
