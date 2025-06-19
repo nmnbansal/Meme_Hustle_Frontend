@@ -9,7 +9,7 @@ function BidPanel({ memeId, socket }) {
   useEffect(() => {
     const fetchBids = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/bids/${memeId}/bids`);
+        const response = await fetch(`https://meme-hustle-backend-zmov.onrender.com/api/bids/${memeId}/bids`);
         const data = await response.json();
         setBids(data);
       } catch (error) {
@@ -35,7 +35,7 @@ function BidPanel({ memeId, socket }) {
     if (!bidAmount || isNaN(bidAmount) || bidAmount <= 0) return;
 
     try {
-      await fetch(`http://localhost:5000/api/bids/${memeId}/bid`, {
+      await fetch(`https://meme-hustle-backend-zmov.onrender.com/api/bids/${memeId}/bid`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ credits: parseInt(bidAmount) }),

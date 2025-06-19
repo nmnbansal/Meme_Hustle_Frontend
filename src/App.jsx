@@ -6,7 +6,7 @@ import CreateMeme from './screens/CreateMeme';
 import Leaderboard from './screens/Leaderboard';
 import NeonText from './components/NeonText';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://meme-hustle-backend-zmov.onrender.com');
 
 function App() {
   const [memes, setMemes] = useState([]);

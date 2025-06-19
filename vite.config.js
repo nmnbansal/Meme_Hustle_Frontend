@@ -7,12 +7,12 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://meme-hustle-backend-zmov.onrender.com',
         changeOrigin: true,
         secure: false,
       },
       '/socket.io': {
-        target: 'http://localhost:5000',
+        target: 'https://meme-hustle-backend-zmov.onrender.com',
         ws: true,
       },
     },

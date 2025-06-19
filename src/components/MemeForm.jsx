@@ -15,7 +15,7 @@ function MemeForm({ socket }) {
       tags: tags.split(',').map((tag) => tag.trim()),
     };
     try {
-      await fetch('http://localhost:5000/api/memes', {
+      await fetch('https://meme-hustle-backend-zmov.onrender.com/api/memes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(meme),
