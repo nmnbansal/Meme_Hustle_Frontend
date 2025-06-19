@@ -8,7 +8,7 @@ function Gallery({ socket }) {
   useEffect(() => {
     const fetchMemes = async () => {
       try {
-        const response = await fetch('/api/memes');
+        const response = await fetch('https://meme-hustle-backend-zmov.onrender.com/api/memes');
         const data = await response.json();
         setMemes(data);
       } catch (error) {

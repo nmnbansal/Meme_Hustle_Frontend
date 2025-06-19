@@ -8,7 +8,7 @@ function Leaderboard() {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const response = await fetch('/api/memes/leaderboard?top=10');
+        const response = await fetch('https://meme-hustle-backend-zmov.onrender.com/api/memes/leaderboard?top=10');
         const data = await response.json();
         setTopMemes(data);
       } catch (error) {

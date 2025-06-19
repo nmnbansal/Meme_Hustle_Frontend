@@ -4,7 +4,7 @@ import GlitchButton from './GlitchButton';
 function MemeCard({ meme, socket }) {
   const handleVote = async (type) => {
     try {
-      const response = await fetch(`/api/memes/${meme.id}/vote`, {
+      const response = await fetch(`https://meme-hustle-backend-zmov.onrender.com/api/memes/${meme.id}/vote`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type }),
@@ -34,7 +34,7 @@ function MemeCard({ meme, socket }) {
     console.log('Placing bid:', { meme_id: meme.id, credits });
 
     try {
-      const response = await fetch(`/api/bids/${meme.id}/bid`, {
+      const response = await fetch(`https://meme-hustle-backend-zmov.onrender.com/api/bids/${meme.id}/bid`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ credits }),
